@@ -1,0 +1,141 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المنصّة الإلكترونية لشركة التأمين العراقية العامة</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f4c81">
+  <link rel="icon" href="/icons/192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/icons/192.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/icons/192.png" alt="شعار">
+      <div>
+        <h1>المنصّة الإلكترونية</h1>
+        <p>شركة التأمين العراقية العامة</p>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="#calc" class="tab active">احسب قسطك</a>
+      <a href="#docs" class="tab">وثائقنا</a>
+      <a href="#branches" class="tab">أقرب فرع</a>
+      <a href="#forms" class="tab">الاستمارات</a>
+      <a href="#contact" class="tab">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Calculator -->
+    <section id="calc" class="panel active">
+      <h2>حاسبة أقساط تأمين المركبات</h2>
+      <div class="card">
+        <label>فئة المركبة</label>
+        <select id="category">
+          <option value="خصوصي_4">خصوصي 4 سلندر</option>
+          <option value="خصوصي_6">خصوصي 6 سلندر</option>
+          <option value="خصوصي_8">خصوصي 8 سلندر</option>
+        </select>
+
+        <label>السعر السوقي (دينار عراقي)</label>
+        <input id="price" type="number" placeholder="مثال: 25000000">
+
+        <label class="chk"><input id="terror" type="checkbox"> تضمين تغطية الإرهاب</label>
+
+        <button id="btnCalc">احسب الآن</button>
+        <div id="result" class="result"></div>
+
+        <div class="note">
+          <strong>ملاحظة:</strong> هذه حاسبة إرشادية. يتم اعتماد القسط النهائي عند إصدار الوثيقة وفق الضوابط والتعليمات النافذة.
+        </div>
+
+        <div class="actions">
+          <a id="linkQuote" class="btn-alt" target="_blank" href="#">إرسال طلب تسعير</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents -->
+    <section id="docs" class="panel">
+      <h2>وثائقنا</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>تأمين السيارات</h3>
+          <p>تغطية الاصطدام والانقلاب والسرقة والحريق والمسؤولية المدنية، مع إمكانية إضافة خطر الإرهاب.</p>
+        </div>
+        <div class="card">
+          <h3>الحريق والحوادث</h3>
+          <p>حماية الممتلكات من الحريق والسرقة والأخطار الإضافية (انفجار، زلازل، فيضانات... حسب الشروط).</p>
+        </div>
+        <div class="card">
+          <h3>التأمين الهندسي</h3>
+          <p>من مرحلة الإنشاء حتى التسليم: وثائق أخطار المقاولين/التركيب والعطب الميكانيكي وغيرها.</p>
+        </div>
+        <div class="card">
+          <h3>التأمين الصحي الجماعي</h3>
+          <p>النفقات الطبية داخل/خارج العراق وفق الوثائق المعتمدة للشركة.</p>
+        </div>
+        <div class="card">
+          <h3>تأمين المنازل</h3>
+          <p>حماية المبنى والمحتويات من الحريق والسرقة والأخطار الطبيعية… وثيقة شاملة للأسرة.</p>
+        </div>
+        <div class="card">
+          <h3>وثائق الحياة</h3>
+          <p>حماية مالية للأسرة (مختلط/مؤقت/مدى الحياة) مع منافع إضافية اختيارية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branches -->
+    <section id="branches" class="panel">
+      <h2>اعثر على أقرب فرع</h2>
+      <div class="card">
+        <button id="btnLocate">حدّد موقعي واعرض الأقرب</button>
+        <div id="branchList" class="list"></div>
+        <div class="note">ساعات الدوام الرسمي: 8:30 صباحاً – 2:30 ظهراً. الشركة مشمولة بالعطل الرسمية.</div>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms" class="panel">
+      <h2>الاستمارات الرسمية</h2>
+      <div class="card">
+        <p>للاستفسارات والاقتراحات والشكاوى وطلبات مقابلة السيد المدير العام، يُرجى استخدام الاستمارة الرسمية أدناه.</p>
+        <div class="embed">
+          <!-- ضع رابط Google Forms الرسمي هنا -->
+          <iframe id="gform" src="" width="100%" height="720" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="note">يُستخدم رقم الهاتف للتواصل لغرض تقديم الخدمة فقط.</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="panel">
+      <h2>تواصل معنا</h2>
+      <div class="card">
+        <p><strong>المقر العام:</strong> بغداد / الكرادة / ساحة عقبة بن نافع / شارع خالد بن الوليد</p>
+        <p><strong>الهاتف:</strong> 07736677513</p>
+        <p><strong>البريد الإلكتروني:</strong> info@iic.mof.gov.iq</p>
+        <p><strong>الموقع الإلكتروني:</strong> iic.mof.gov.iq</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>© شركة التأمين العراقية العامة — جميع الحقوق محفوظة</small>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', ()=>{
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
